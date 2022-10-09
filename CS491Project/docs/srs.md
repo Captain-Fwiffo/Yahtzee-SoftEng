@@ -73,6 +73,9 @@ This game is intended for 1-4 players. The user should be able to pick the numbe
 
 ### 1.5 References
 https://github.com/Pencilburner/CS491Project.git
+![Use Case Diagram](UseCaseDiagram.png)
+![Activity Diagram](ActivityDiagram.png)
+![Sequence Diagram](SequenceDiagram.png)
 
 ## Overall Description
 ### 2.1 Product Perspective
