@@ -111,6 +111,7 @@ Currently planned classes are:
      This will be the first menu the user sees and will handle user inputs on this UI
 * Game UI Class
      This will be the game UI described above and will handle all actions involved in playing the game
+     
 Possible classes are:
 * Useful functions class
     Individual methods can be placed her for better organization
