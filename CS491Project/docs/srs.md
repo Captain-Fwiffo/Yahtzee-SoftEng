@@ -1,12 +1,11 @@
-# IEEE-Tempate
-IEEE System Requirements Specification Template
+# CS 491 Project
+
 
 # Software Requirements Specification
-## For  <project name>
-Version 1.0 approved
-Prepared by <author>
-<organization>
-<date created>
+## Yahtzee Game
+Prepared by Jonathon Byers and Stephen Slas
+CS491
+10/9/2022
 
 Table of Contents
 =================
