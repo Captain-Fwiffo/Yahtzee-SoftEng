@@ -90,7 +90,7 @@ When the application is launched, the user will be see a main menu. On this init
 
 Once the game is launched there will be a separate game interface. This interface will be split between the scorecard and the dice rolling sections. The score card should allow:
 * See active players scorecard
-* See see active players total score
+* See active players total score
 * Have a dropdown menue to switch to different players' scorecards (optional)
 * Click on a field to submit current hand to that field
 
