@@ -79,19 +79,52 @@ https://github.com/Pencilburner/CS491Project.git
 
 ## Overall Description
 ### 2.1 Product Perspective
-Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.
+This is a new, self-contained product. The SRS will cover the entirety of the system and all of its functionality. It will be made from the ground up with no sections originating from outside sources.
 ### 2.2 Product Functions
-Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
+When the application is launched, the user will be see a main menu. On this initial menu the following functionalities are planned:
+* Set Number of Players
+* Rules/How to Play (optional)
+* Set Names of Players (optional)
+* See previous scores (optional)
+* Start Game
+
+Once the game is launched there will be a separate game interface. This interface will be split between the scorecard and the dice rolling sections. The score card should allow:
+* See active players scorecard
+* See see active players total score
+* Have a dropdown menue to switch to different players' scorecards (optional)
+* Click on a field to submit current hand to that field
+
+The dice rolling area will allow:
+* Rolling a hand of 5 dice
+* Choosing a number of dice to keep
+* Rerolling any dice not kept 
+* Repeat choosing and rerolling sequence up to one more time
+* Submitting final hand
+
+Once a player has submitted a hand into a score field, the game will repeat this process on the next player. When every player has a filled out scorecard, the game will end. The player with the highest overall score will be declared the winner. The user will then be offered to start the game again or return to the main menu.
+
 ### 2.3 User Classes and Characteristics
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
+Currently planned classes are:
+* Main Class
+     This will be the main class to launch the UIs from.
+* Main Menu UI Class 
+     This will be the first menu the user sees and will handle user inputs on this UI
+* Game UI Class
+     This will be the game UI described above and will handle all actions involved in playing the game
+Possible classes are:
+* Useful functions class
+    Individual methods can be placed her for better organization
+
 ### 2.4 Operating Environment
-Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.
+This application will be implemented on java and will be playable on any computer with java installed.
 ### 2.5 Design and Implementation Constraints
-Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).
+The two largest constraints will be time and ability. The project will have regular deadlines that we must reach throughout the semester. The final product must be complete by the end of the semester. In addition, dedicating the time requried for this project will be a challenge while keeping up with other classes and part-time jobs. Proper time management will be critical to success.
+
+Addtionally both developers are novices with regards to software engineering and development. Many planned aspects of this project will be entirely new to us and will require much trial and error to get workable. Accounting for our own inabilities will be necessary to success.
 ### 2.6 User Documentation
-List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.
+This SRS and a README will be included.
 ### 2.7 Assumptions and Dependencies
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
+No assumptions or dependencies at this time.
 ## External Interface Requirements
 ### 3.1 User Interfaces
 Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.
