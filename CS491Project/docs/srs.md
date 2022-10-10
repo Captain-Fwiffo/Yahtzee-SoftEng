@@ -147,17 +147,15 @@ Our team advises against playing this game for more than two hours at a time. We
 ### 5.3 Security Requirements
 This game will not implement any security or privacy safeguards, as it will not require any sensitive data to be input. Our team will strive to make sure the game is as bug-free as possible to reduce the possibility of a bug in our program being used to lift sensitive data from the computer by third parties.
 ### 5.4 Software Quality Attributes
-Specify any additional quality characteristics for the product that will be important to either the customers or the developers. Some to consider are: adaptability, availability, correctness, flexibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability. Write these to be specific, quantitative, and verifiable when possible. At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.
-
-It is important that our product is available to users, as this team of developers feels strongly about Yahtzee and the ability to play it at any moment. It is also important that our game be reliable, reusable, portable, and usable. It must be reliable
+It is important that our product is available to users, as this team of developers feels strongly about Yahtzee and the ability to play it at any moment. It is also important that our game be reliable, reusable, and usable. It must be reliable, as users will feel frustrated and not want to use the program if it is not reliable. It must be reusable, as one of the key features of Yahtzee is its replayability. It must be usable, as we want the widest userbase possible; Yahtzee is made for all ages, and it would not be ideal if players who could play Yahtzee were not able to do so because of this program's lack of usability. In addition, our software will be inherently portable as it will be written in Java.
 ### 5.5 Business Rules
-List any operating principles about the product, such as which individuals or roles can perform which functions under specific circumstances. These are not functional requirements in themselves, but they may imply certain functional requirements to enforce the rules.
+Our goal is to create the closest possible digital analogue for Yahtzee. This includes the ability for any number of players to play a game of Yahtzee and for all the various rules of Yahtzee to be implemented and accessible through the game's GUI.
 
 ## Other Requirements
-TBD
+No further requirements have been proposed at this time.
 ### Appendix A: Glossary
-TBD
+No glossary terms have been created at this time.
 ### Appendix B: Analysis Models
-TBD
+No analysis models exist for this project at this time.
 ### Appendix C: To Be Determined List
-Collect a numbered list of the TBD (to be determined) references that remain in the SRS so they can be tracked to closure.
+1. 4.1 [System Feature 1](#41-system-feature-1)
