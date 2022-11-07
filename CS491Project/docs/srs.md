@@ -178,9 +178,9 @@ REQ-3: The player must choose one field per turn in order for the turn to end an
 ### 4.4 System Feature 4
 "Player" object
 #### 4.4.1 Description and Priority
-This program will have one or multiple "Player" objects as determined by user selection before starting the game. Each player will have their own persistent score card. While Yahtzee is playable with one player, this project will require the ability to play with a specified number of players, making this a High priority.
+This program will have one or multiple "Player" objects as determined by user selection before starting the game, and name each player. Each player will have their own persistent score card. While Yahtzee is playable with one player, this project will require the ability to play with a specified number of players, making this a High priority.
 #### 4.4.2 Stimulus/Response Sequences
-On the main menu, the player will be able to specify how many players will be playing the game. Upon starting the game, this number of player objects will be created. Each player will get a turn in order of creation until the final player has taken his turn, upon which the order of players will loop taking turns until the game ends, after which each player's score will be displayed.
+On the main menu, the user will be able to specify how many players will be playing the game. The user will also be able to name these players. Upon starting the game, this number of player objects will be created. Each player will get a turn in order of creation until the final player has taken his turn, upon which the order of players will loop taking turns until the game ends, after which each player's score will be displayed.
 #### 4.4.3 Functional Requirements
 REQ-1: The specified number of players must be created at round start.
 
@@ -191,6 +191,8 @@ REQ-2: Individual players will have their score cards tracked persistently throu
 REQ-3: Players will be sequentially modified as turns begin and end.
 
 REQ-4: Players' scores will be displayed after the game ends.
+
+REQ-5: Each player will be able to have a name specified for them before the beginning of the game.
 ### 4.5 System Feature 5
 Options Menu
 #### 4.5.1 Description and Priority
