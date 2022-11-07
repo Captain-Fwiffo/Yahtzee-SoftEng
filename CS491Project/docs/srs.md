@@ -134,7 +134,7 @@ This product will rely on standard Oracle Java libraries. Operating systems will
 This program will not utilize any internet features whatsoever, being a totally offline application.
 ## System Features
 ### 4.1 System Feature 1
-TBD
+Roll Dice
 
 ## Other Nonfunctional Requirements
 ### 5.1 Performance Requirements
