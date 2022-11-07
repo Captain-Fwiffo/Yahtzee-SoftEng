@@ -135,7 +135,15 @@ This program will not utilize any internet features whatsoever, being a totally 
 ## System Features
 ### 4.1 System Feature 1
 Roll Dice
-
+#### 4.1.1 Description and Priority
+Our program will be able to roll a specified number of dice, outputting the results as integers. As this is integral to the game of Yahtzee, this feature has a High priority.
+#### 4.1.2 Stimulus/Response Sequences
+Players will click on the "Roll" button and roll a hand of dice. They will also be able to select "Keep" on specific dice to refrain from rolling those when pressing the "Roll" button.
+#### 4.1.3 Functional Requirements
+REQ-1: The dice roll function must roll a specified number of dice, up to five.
+REQ-2: The dice roll function must output the results as integers.
+REQ-3: The dice roll function must only be able to be accessed three times in one round.
+REQ-4: The dice roll function's results must be random or pseudorandom.
 ## Other Nonfunctional Requirements
 ### 5.1 Performance Requirements
 This product has an intended target of utilizing 256 megabytes of memory or less. Our belief is that a simple program like Yahtzee should not require an enormous amount of computer resources. For this same reason we also aim to allow any modern CPU to play the game as well. Some processing power will be used to render the GUI, and some processing power will be used to perform the calculations and function calls being performed in the game's code.
