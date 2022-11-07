@@ -156,6 +156,6 @@ No glossary terms have been created at this time.
 ![Use Case Diagram](UseCaseDiagram.png)
 ![Activity Diagram](ActivityDiagram.png)
 ![Sequence Diagram](SequenceDiagram.png)
-![Class Diagram](ClassDiagram.png)
+![Class Diagram](Class Diagram.png)
 ### Appendix C: To Be Determined List
 1. 4.1 [System Feature 1](#41-system-feature-1)
