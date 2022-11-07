@@ -136,14 +136,35 @@ This program will not utilize any internet features whatsoever, being a totally 
 ### 4.1 System Feature 1
 Roll Dice
 #### 4.1.1 Description and Priority
-Our program will be able to roll a specified number of dice, outputting the results as integers. As this is integral to the game of Yahtzee, this feature has a High priority.
+This program will be able to roll a specified number of dice, outputting the results as integers. As this is integral to the game of Yahtzee, this feature has a High priority.
 #### 4.1.2 Stimulus/Response Sequences
 Players will click on the "Roll" button and roll a hand of dice. They will also be able to select "Keep" on specific dice to refrain from rolling those when pressing the "Roll" button.
 #### 4.1.3 Functional Requirements
 REQ-1: The dice roll function must roll a specified number of dice, up to five.
+
 REQ-2: The dice roll function must output the results as integers.
+
 REQ-3: The dice roll function must only be able to be accessed three times in one round.
+
 REQ-4: The dice roll function's results must be random or pseudorandom.
+### 4.2 System Feature 2
+Fill Scorecard
+#### 4.2.1 Description and Priority
+This program will allow players to choose which field on the score card they would like to fill. Similarly to rolling dice, this feature is essential for playing Yahtzee and has a High priority.
+#### 4.2.2 Stimulus/Response Sequences
+After rolling one or multiple hands, players will choose a field to fill and click on a button next to that field. If this field is a valid field for the current hand, the program will calculate the correct score for the corresponding field and put that score in the box for that field. If the field chosen is not a valid field, the program will enter a zero for the score in that box.
+#### 4.2.3 Functional Requirements
+REQ-1: The player must be able to click a box next to a field to fill it.
+REQ-2: The game must calculate whether the hand is valid for the field selected and enter the score appropriately.
+REQ-3: The player must choose one field per turn in order for the turn to end and the game to progress.
+### 4.3 System Feature 3
+#### 4.3.1 Description and Priority
+#### 4.3.2 Stimulus/Response Sequences
+#### 4.3.3 Functional Requirements
+### 4.4 System Feature 4
+#### 4.4.1 Description and Priority
+#### 4.4.2 Stimulus/Response Sequences
+#### 4.4.3 Functional Requirements
 ## Other Nonfunctional Requirements
 ### 5.1 Performance Requirements
 This product has an intended target of utilizing 256 megabytes of memory or less. Our belief is that a simple program like Yahtzee should not require an enormous amount of computer resources. For this same reason we also aim to allow any modern CPU to play the game as well. Some processing power will be used to render the GUI, and some processing power will be used to perform the calculations and function calls being performed in the game's code.
