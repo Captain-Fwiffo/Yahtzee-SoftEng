@@ -31,7 +31,7 @@ Table of Contents
     * 3.4 [Communications Interfaces](#34-communications-interfaces)
   * [System Features](#system-features)
     * 4.1 [System Feature 1](#41-system-feature-1)
-    * 4.2 [System Feature 2 (and so on)](#42-system-feature-2-and-so-on)
+    * 4.2 [System Feature 2](#42-system-feature-2)
   * [Other Nonfunctional Requirements](#other-nonfunctional-requirements)
     * 5.1 [Performance Requirements](#51-performance-requirements)
     * 5.2 [Safety Requirements](#52-safety-requirements)
@@ -134,12 +134,23 @@ This product will rely on standard Oracle Java libraries. Operating systems will
 This program will not utilize any internet features whatsoever, being a totally offline application.
 ## System Features
 ### 4.1 System Feature 1
-Roll Dice
+Graphical User Interfaces
 #### 4.1.1 Description and Priority
-This program will be able to roll a specified number of dice, outputting the results as integers. As this is integral to the game of Yahtzee, this feature has a High priority.
+This program will have graphical user interfaces that allow the player to interface with the game. This is a fundamental part of the concept of this project, making it a High priority.
 #### 4.1.2 Stimulus/Response Sequences
-Players will click on the "Roll" button and roll a hand of dice. They will also be able to select "Keep" on specific dice to refrain from rolling those when pressing the "Roll" button.
+Users will run the executable file of this program and the main menu GUI will be brought up. When the user has input all the options they wish to play with, they will press the "Start Game" button, causing the main menu GUI to terminate and the game menu GUI to be brought up.
 #### 4.1.3 Functional Requirements
+REQ-1: The game must be fully playable and customizable using only the GUI.
+
+REQ-2: There must be two GUIs, one for the main menu and one for in-progress games.
+
+### 4.2 System Feature 2
+Roll Dice
+#### 4.2.1 Description and Priority
+This program will be able to roll a specified number of dice, outputting the results as integers. As this is integral to the game of Yahtzee, this feature has a High priority.
+#### 4.2.2 Stimulus/Response Sequences
+Players will click on the "Roll" button and roll a hand of dice. They will also be able to select "Keep" on specific dice to refrain from rolling those when pressing the "Roll" button.
+#### 4.2.3 Functional Requirements
 REQ-1: The dice roll function must roll a specified number of dice, up to five.
 
 REQ-2: The dice roll function must output the results as integers.
@@ -147,20 +158,18 @@ REQ-2: The dice roll function must output the results as integers.
 REQ-3: The dice roll function must only be able to be accessed three times in one round.
 
 REQ-4: The dice roll function's results must be random or pseudorandom.
-### 4.2 System Feature 2
+### 4.3 System Feature 2
 Fill Scorecard
-#### 4.2.1 Description and Priority
-This program will allow players to choose which field on the score card they would like to fill. Similarly to rolling dice, this feature is essential for playing Yahtzee and has a High priority.
-#### 4.2.2 Stimulus/Response Sequences
-After rolling one or multiple hands, players will choose a field to fill and click on a button next to that field. If this field is a valid field for the current hand, the program will calculate the correct score for the corresponding field and put that score in the box for that field. If the field chosen is not a valid field, the program will enter a zero for the score in that box.
-#### 4.2.3 Functional Requirements
-REQ-1: The player must be able to click a box next to a field to fill it.
-REQ-2: The game must calculate whether the hand is valid for the field selected and enter the score appropriately.
-REQ-3: The player must choose one field per turn in order for the turn to end and the game to progress.
-### 4.3 System Feature 3
 #### 4.3.1 Description and Priority
+This program will allow players to choose which field on the score card they would like to fill. Similarly to rolling dice, this feature is essential for playing Yahtzee and has a High priority.
 #### 4.3.2 Stimulus/Response Sequences
+After rolling one or multiple hands, players will choose a field to fill and click on a button next to that field. If this field is a valid field for the current hand, the program will calculate the correct score for the corresponding field and put that score in the box for that field. If the field chosen is not a valid field, the program will enter a zero for the score in that box.
 #### 4.3.3 Functional Requirements
+REQ-1: The player must be able to click a box next to a field to fill it.
+
+REQ-2: The game must calculate whether the hand is valid for the field selected and enter the score appropriately.
+
+REQ-3: The player must choose one field per turn in order for the turn to end and the game to progress.
 ### 4.4 System Feature 4
 #### 4.4.1 Description and Priority
 #### 4.4.2 Stimulus/Response Sequences
@@ -187,4 +196,3 @@ No glossary terms have been created at this time.
 ![Sequence Diagram](SequenceDiagram.png)
 ![Class Diagram](ClassDiagram.png)
 ### Appendix C: To Be Determined List
-1. 4.1 [System Feature 1](#41-system-feature-1)
