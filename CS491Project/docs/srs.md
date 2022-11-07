@@ -144,7 +144,7 @@ Users will run the executable file of this program and the main menu GUI will be
 #### 4.1.3 Functional Requirements
 REQ-1: The game must be fully playable and customizable using only the GUI.
 
-REQ-2: There must be two GUIs, one for the main menu and one for in-progress games.
+REQ-2: There must be at least two GUIs, one for the main menu and one for in-progress games.
 
 REQ-3: The player must be able to view the score cards of other players during their turn, though this will be a "read-only" function.
 ### 4.2 System Feature 2
@@ -161,7 +161,7 @@ REQ-2: The dice roll function must output the results as integers.
 REQ-3: The dice roll function must only be able to be accessed three times in one round.
 
 REQ-4: The dice roll function's results must be random or pseudorandom.
-### 4.3 System Feature 2
+### 4.3 System Feature 3
 Fill Scorecard
 #### 4.3.1 Description and Priority
 This program will allow players to choose which field on the score card they would like to fill. Similarly to rolling dice, this feature is essential for playing Yahtzee and has a High priority.
@@ -178,7 +178,7 @@ REQ-3: The player must choose one field per turn in order for the turn to end an
 #### 4.4.1 Description and Priority
 This program will have one or multiple "Player" objects as determined by user selection before starting the game. Each player will have their own persistent score card. While Yahtzee is playable with one player, this project will require the ability to play with a specified number of players, making this a High priority.
 #### 4.4.2 Stimulus/Response Sequences
-On the start menu, the player will be able to specify how many players will be playing the game. Upon starting the game, this number of player objects will be created. Each player will get a turn in order of creation until the final player has taken his turn, upon which the order of players will loop taking turns until the game ends, after which each player's score will be displayed.
+On the main menu, the player will be able to specify how many players will be playing the game. Upon starting the game, this number of player objects will be created. Each player will get a turn in order of creation until the final player has taken his turn, upon which the order of players will loop taking turns until the game ends, after which each player's score will be displayed.
 #### 4.4.3 Functional Requirements
 REQ-1: The specified number of players must be created at round start.
 
@@ -187,6 +187,24 @@ REQ-2: Players will have their own scores and score cards.
 REQ-2: Individual players will have their score cards tracked persistently throughout the game.
 
 REQ-3: Players will be sequentially modified as turns begin and end.
+
+REQ-4: Players' scores will be displayed after the game ends.
+### 4.5 System Feature 5
+Options Menu
+#### 4.5.1 Description and Priority
+This program will have a menu for changing options about the game, located in the main menu. The "Number of Players" field could be located here, and the game window size could also be changed in this menu. However, this is not a strictly necessary menu to have, as this game will not have many options to change to begin with, and it may be better to have the "Number of Players" option on the main screen. For these reasons, the priority for this feature is Low priority.
+#### 4.5.2 Stimulus/Response Sequences
+When the main menu is pulled up, players will be able to click the "Options" button to pull up this screen and change parts of the game as they please.
+#### 4.5.3 Functional Requirements
+REQ-1: Players must be able to click the Options button to go to the Options screen.
+
+REQ-2: Players must be able to change at least two aspects of the game from the Options screen, including the game window size.
+### 4.6 System Feature 6
+How to Play
+### 4.6.1 Description and Priority
+This program will have a "How to Play" button on the main menu. This button will give helpful information to players who do not know how to play Yahtzee. This feature is also not needed for this project, but we desire for our players to know how to play the game, which gives this feature Medium priority.
+#### 4.6.2 Stimulus/Response Sequences
+
 ## Other Nonfunctional Requirements
 ### 5.1 Performance Requirements
 This product has an intended target of utilizing 256 megabytes of memory or less. Our belief is that a simple program like Yahtzee should not require an enormous amount of computer resources. For this same reason we also aim to allow any modern CPU to play the game as well. Some processing power will be used to render the GUI, and some processing power will be used to perform the calculations and function calls being performed in the game's code.
