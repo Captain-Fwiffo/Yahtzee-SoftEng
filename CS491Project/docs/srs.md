@@ -34,6 +34,8 @@ Table of Contents
     * 4.2 [System Feature 2](#42-system-feature-2)
     * 4.3 [System Feature 3](#43-system-feature-3)
     * 4.4 [System Feature 4](#44-system-feature-4)
+    * 4.5 [System Feature 5](#45-system-feature-5)
+    * 4.6 [System Feature 6](#46-system-feature-6)
   * [Other Nonfunctional Requirements](#other-nonfunctional-requirements)
     * 5.1 [Performance Requirements](#51-performance-requirements)
     * 5.2 [Safety Requirements](#52-safety-requirements)
@@ -204,8 +206,17 @@ How to Play
 ### 4.6.1 Description and Priority
 This program will have a "How to Play" button on the main menu. This button will give helpful information to players who do not know how to play Yahtzee. This feature is also not needed for this project, but we desire for our players to know how to play the game, which gives this feature Medium priority.
 #### 4.6.2 Stimulus/Response Sequences
+Upon starting the game and being brought to the main menu, players will click the "How to Play" button. Text will appear that tells the player how Yahtzee is played and how the program is interfaced with.
+#### 4.6.3 Functional Requirements
+REQ-1: The "How to Play" button must be present on the main menu GUI.
 
+REQ-2: The "How to Play" button must present information on Yahtzee to the player after being pressed
+
+REQ-3: The player must be able to dismiss this information and return the main menu to its original state.
 ## Other Nonfunctional Requirements
+REQ-1: Past games should not affect future games in any way.
+
+REQ-2: The interface should be intuitive.
 ### 5.1 Performance Requirements
 This product has an intended target of utilizing 256 megabytes of memory or less. Our belief is that a simple program like Yahtzee should not require an enormous amount of computer resources. For this same reason we also aim to allow any modern CPU to play the game as well. Some processing power will be used to render the GUI, and some processing power will be used to perform the calculations and function calls being performed in the game's code.
 ### 5.2 Safety Requirements
