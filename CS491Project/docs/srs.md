@@ -73,9 +73,6 @@ This game is intended for 1-4 players. The user should be able to pick the numbe
 
 ### 1.5 References
 https://github.com/Pencilburner/CS491Project.git
-![Use Case Diagram](UseCaseDiagram.png)
-![Activity Diagram](ActivityDiagram.png)
-![Sequence Diagram](SequenceDiagram.png)
 
 ## Overall Description
 ### 2.1 Product Perspective
@@ -156,6 +153,9 @@ No further requirements have been proposed at this time.
 ### Appendix A: Glossary
 No glossary terms have been created at this time.
 ### Appendix B: Analysis Models
-No analysis models exist for this project at this time.
+![Use Case Diagram](UseCaseDiagram.png)
+![Activity Diagram](ActivityDiagram.png)
+![Sequence Diagram](SequenceDiagram.png)
+![Class Diagram](ClassDiagram.png)
 ### Appendix C: To Be Determined List
 1. 4.1 [System Feature 1](#41-system-feature-1)
