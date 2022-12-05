@@ -1,0 +1,56 @@
+class GameDiceTurnHand(playerName)
+int fields[13] = 0;
+bonus = 0;
+
+{
+	private int[] RollDice(int foo)
+	{
+		for(i = 0; i < foo; i++)
+			RollDice[i] = random(1, 6);
+		rolls++;
+	}
+`	private int[] RollAgain(int[] unsel)
+	{
+		for i in unsel:
+			int[] Dice = unsel;
+		for(int i = Dice.length(); i < 6; i++)
+			RollAgain[i] = random(1, 6);
+		rolls++;
+	}
+	
+	private void fillField(int[] hand, int field)
+	{
+		if field == 1
+			Player[x].TotalScore += scoreOnes(hand);
+			if Player[x].TopScore >= 63 && bonus != 1
+				Player[x].TotalScore += 35;
+				bonus = 1;
+				fields[0] = 1;
+		else if field == 2 (and so on)
+			...
+		
+		else if field == 7
+			if check3(hand)
+				Player[x].TotalScore += ThreeKindScore()
+			else
+				Player[x].TotalScore += 0;
+			fields[6] = 1;
+		(loop to check rest and change status from 0 to 1)
+		
+			
+	}
+
+	public bool check3(int hand)
+	{
+		for(loop through hand)
+			++ for each dice the same
+		if(enough dice)
+			return true
+		return false	
+	}
+	public bool check4(int hand)
+	public bool checkFullHouse(int hand)
+	public bool checkSmStraight(int hand)
+	...
+
+}

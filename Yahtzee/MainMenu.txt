@@ -1,0 +1,38 @@
+class MainMenu()
+{
+	public String[] playerNames;
+	public int screenSize;
+	
+	jOptions.ButtonPress()
+	{
+		private void OptionsWindow()
+		{
+			screenSize = setScreenSize();
+		}
+		
+	}
+
+	jEditPlayers.ButtonPress()
+	{
+		private void PlayerMod();
+		{
+			for(changes)
+				playerNames[x] = setName();
+		}
+	}
+
+	jHowToPlay.ButtonPress()
+	{
+		jInformationPopUp();
+	}
+
+	jQuit.ButtonPress()
+	{
+		System.exit();
+	}
+
+	private void jStart(playerNames.length, playerNames)
+	{
+		GameMenu g = new GameMenu();
+	}
+}
