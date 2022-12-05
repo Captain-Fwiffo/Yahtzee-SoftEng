@@ -239,4 +239,5 @@ No glossary terms have been created at this time.
 ![Activity Diagram](ActivityDiagram.png)
 ![Sequence Diagram](SequenceDiagram.png)
 ![Class Diagram](ClassDiagram.png)
+![State Machine Diagram](StateMachineDiagram.png)
 ### Appendix C: To Be Determined List
