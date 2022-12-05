@@ -7,6 +7,6 @@
  *
  * @author Administrator
  */
-public class UsefulFunctions {
+public class Player {
     
 }
