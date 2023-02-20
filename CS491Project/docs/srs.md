@@ -81,6 +81,7 @@ https://github.com/Pencilburner/CS491Project.git
 ## Overall Description
 ### 2.1 Product Perspective
 This is a new, self-contained product. The SRS will cover the entirety of the system and all of its functionality. It will be made from the ground up with no sections originating from outside sources.
+
 ### 2.2 Product Functions
 When the application is launched, the user will be see a main menu. On this initial menu the following functionalities are planned:
 * Set Number of Players
@@ -240,4 +241,21 @@ No glossary terms have been created at this time.
 ![Sequence Diagram](SequenceDiagram.png)
 ![Class Diagram](ClassDiagram.png)
 ![State Machine Diagram](StateMachineDiagram.png)
-### Appendix C: To Be Determined List
+### Appendix C: Project Management Plan
+
+## 1. Overview
+### 1.1 Project Purpose, Objectives, and Success Criteria
+Our project aims to deliver a fully functioning Yahtzee game to users via use of Java programming, Swing GUI, and various project management tools, such as Github, Agile, and Gantt charts. We are undertaking this project so that we can get experience utilizing good software development principles and good software management techniques, so as to be good computer scientist project team members in the future. There must be a usable GUI, both a main menu GUI and a game menu GUI. There must be an option to allow n players to play the game. All players must be able to roll dice, select which dice to re-roll, fill fields properly, have their score determined accordingly, and end their turn, and proceed accordingly until the game is over and a winner can be declared according to the player with the highest score. Our stakeholder will deem the project successful if these objectives are achieved and we follow good software engineering principles as well as project management techniques. This product will not integrate with any other product, though it will be updated frequently via Git.
+
+### 1.2 Project Deliverables
+We will first submit our project management plan to Professor Glaue on February 20 via submitted files on Western Online as well as a presentation. It will consist of a COCOMO project estimation, Gantt Chart scheduling, and filled out sections of the Project Management Plan template in the SRS document.
+
+We will then continue submitting iteratives of our project to Professor Glaue on March 19 and April 9 via submitted files on Western Online and a presentation. These will consist of our ongoing programming work on the project and demonstration of the GUI in sprint demos. They will also consist of any scheduling changes made by the group.
+
+Finally, our completed project will be submitted to Professor Glaue via Western Online on May 1. It will contain the SRS document, a README.txt file to explain to users how to run the program, all source code, all compiled code, and all test files of the project.
+
+### 1.3 Assumptions, Dependencies, and Constraints
+Our project depends on Github and Western Online remaining online and Apache Netbeans remaining functional (SHTF). Our project also hinges on the two team members being available the last few days before a deadline, which is when most of our work gets done (LAYZ). This may sometimes prove difficult as both team members work jobs, besides being full time students, though it was not difficult last semester.
+
+### 1.4 Evolution of the Plan
+If revisions of the plan are required, the SRS document will be updated to reflect the revisions, and the revisions will be announced at the next group presentation. In addition, we will contact each other regarding the project every two weeks and attempt to identify areas of the plan that may need revision.
