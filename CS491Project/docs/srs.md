@@ -241,6 +241,10 @@ No glossary terms have been created at this time.
 ![Sequence Diagram](SequenceDiagram.png)
 ![Class Diagram](ClassDiagram.png)
 ![State Machine Diagram](StateMachineDiagram.png)
+![Gantt Chart, Part 1](gantt1.png)
+![Gantt Chart, Part 2](gantt2.png)
+![Gantt Chart, Part 3](gantt3.png)
+![Gantt Chart, Part 4](gantt4.png)
 ### Appendix C: Project Management Plan
 
 ## 1. Overview
