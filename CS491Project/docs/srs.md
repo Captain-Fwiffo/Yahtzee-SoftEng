@@ -263,3 +263,6 @@ Our project depends on Github and Western Online remaining online and Apache Net
 
 ### 1.4 Evolution of the Plan
 If revisions of the plan are required, the SRS document will be updated to reflect the revisions, and the revisions will be announced at the next group presentation. In addition, we will contact each other regarding the project every two weeks and attempt to identify areas of the plan that may need revision.
+
+### 2.2 Internal Structure
+The internal structure of the project is simple due to the nature of only having two team members. Communication will be done regularly through Discord for planning and development. Both members will have equal priority when it comes to decision making. Any dispute will have to be solved through civil means as there will be no seniority structure. In the event of unreconcilable disagreement, the stakeholder will have to choose their preferred option. 
