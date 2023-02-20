@@ -241,6 +241,8 @@ No glossary terms have been created at this time.
 ![Sequence Diagram](SequenceDiagram.png)
 ![Class Diagram](ClassDiagram.png)
 ![State Machine Diagram](StateMachineDiagram.png)
+![Cocomo FP](CocomoFunctionPoint.PNG)
+![Cocomo SLOC](CocomoSLOC.PNG)
 ![Gantt Chart, Part 1](gantt1.png)
 ![Gantt Chart, Part 2](gantt2.png)
 ![Gantt Chart, Part 3](gantt3.png)
