@@ -263,7 +263,7 @@ Finally, our completed project will be submitted to Professor Glaue via Western 
 ### 1.3 Assumptions, Dependencies, and Constraints
 Our project depends on Github and Western Online remaining online and Apache Netbeans remaining functional (SHTF). Our project also hinges on the two team members being available the last few days before a deadline, which is when most of our work gets done (LAYZ). This may sometimes prove difficult as both team members work jobs, besides being full time students, though it was not difficult last semester.
 
-### 1.4 Evolution of the Plan
+### 1.6 Evolution of the Plan
 If revisions of the plan are required, the SRS document will be updated to reflect the revisions, and the revisions will be announced at the next group presentation. In addition, we will contact each other regarding the project every two weeks and attempt to identify areas of the plan that may need revision.
 
 ### 2.2 Internal Structure
