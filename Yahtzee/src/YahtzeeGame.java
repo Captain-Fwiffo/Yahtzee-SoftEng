@@ -7,6 +7,34 @@
  *
  * @author Administrator
  */
-public class YahtzeeGame {
+
+import java.util.Random;
+
+public class YahtzeeGame 
+{
+    
+    Random rand = new Random();
+    int[] handDice;
+    boolean keep1;
+    boolean keep2;
+    boolean keep3;
+    boolean keep4;
+    boolean keep5;
+    
+    YahtzeeGame()
+    {
+        
+    }
+    
+    public int roll()
+    {
+        int roll = rand.nextInt(6) + 1;
+        return roll;
+    }
+    
+    public String getImage(int r)
+    {
+        return "Dice" + r + ".png";
+    }
     
 }
