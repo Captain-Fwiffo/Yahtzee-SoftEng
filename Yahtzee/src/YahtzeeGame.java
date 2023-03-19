@@ -14,22 +14,76 @@ public class YahtzeeGame
 {
     
     Random rand = new Random();
-    int[] handDice;
-    boolean keep1;
-    boolean keep2;
-    boolean keep3;
-    boolean keep4;
-    boolean keep5;
+    int[] handDice = {0,0,0,0,0};
+    boolean[] keeps = {false, false, false, false, false};
+    int rollCount;
     
     YahtzeeGame()
     {
         
     }
     
+    public void roundStart()
+    {
+        rollCount = 0;
+        for(int i = 0; i < handDice.length; i++)
+        {
+            handDice[i] = 0;
+        }
+        for(int i = 0; i < handDice.length; i++)
+        {
+            keeps[i] = false;
+        }
+    }
+    
     public int roll()
     {
         int roll = rand.nextInt(6) + 1;
         return roll;
+    }
+    
+    public void rollDice()
+    {
+        for(int i = 0; i < handDice.length; i++)
+        {
+            if(keeps[i] == false)
+            {
+                handDice[i] = this.roll();
+            }
+        }
+        rollCount++;
+        
+    }
+    
+    public void toggleX(int x, boolean y)
+    {
+        if(y == true)
+        {
+            keeps[x] = true;
+        }
+        if(y == false)
+        {
+            keeps[x] = false;
+        }
+    }
+    
+    public int getDice(int req)
+    {
+        return handDice[req];
+    }
+    
+    public int getRollCount()
+    {
+        return rollCount;
+    }
+    
+    public boolean rollLimit()
+    {
+        if(rollCount >= 3)
+        {
+            return true;
+        }
+        return false;
     }
     
     public String getImage(int r)

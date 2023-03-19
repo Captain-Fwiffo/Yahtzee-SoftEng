@@ -4,6 +4,9 @@
  */
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.AbstractButton;
 /**
  *
  * @author Administrator
@@ -11,12 +14,19 @@ import javax.swing.ImageIcon;
 public class GameMenu extends javax.swing.JFrame {
 
     YahtzeeGame game = new YahtzeeGame();
+    boolean[] button = new boolean[5];
 
     /**
      * Creates new form GameMenu
      */
     public GameMenu() {
         initComponents();
+        jToggleButton1.setEnabled(false);
+        jToggleButton2.setEnabled(false);
+        jToggleButton3.setEnabled(false);
+        jToggleButton4.setEnabled(false);
+        jToggleButton5.setEnabled(false);
+       
     }
 
     /**
@@ -86,6 +96,7 @@ public class GameMenu extends javax.swing.JFrame {
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -557,15 +568,14 @@ public class GameMenu extends javax.swing.JFrame {
             }
         });
 
+        jLabel26.setText("Yo Stephen, this is the message box for the game.");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(402, 402, 402)
-                        .addComponent(jButton1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -586,7 +596,10 @@ public class GameMenu extends javax.swing.JFrame {
                                 .addComponent(jToggleButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jToggleButton3)
-                                .addGap(101, 101, 101)))))
+                                .addGap(101, 101, 101))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(402, 402, 402)
+                        .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -599,6 +612,10 @@ public class GameMenu extends javax.swing.JFrame {
                         .addGap(154, 154, 154)
                         .addComponent(jToggleButton5)
                         .addGap(147, 147, 147))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(393, 393, 393)
+                .addComponent(jLabel26)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,7 +636,9 @@ public class GameMenu extends javax.swing.JFrame {
                     .addComponent(jToggleButton3)
                     .addComponent(jToggleButton4)
                     .addComponent(jToggleButton5))
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel26)
+                .addGap(103, 103, 103))
         );
 
         jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -731,28 +750,55 @@ public class GameMenu extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        game.toggleX(0, jToggleButton1.isSelected());
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         // TODO add your handling code here:
+        game.toggleX(1, jToggleButton2.isSelected());
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         // TODO add your handling code here:
+        game.toggleX(2, jToggleButton3.isSelected());
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
+        game.toggleX(3, jToggleButton4.isSelected());
+
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         // TODO add your handling code here:
+        game.toggleX(4, jToggleButton5.isSelected());
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jLabel21.setIcon(new
-javax.swing.ImageIcon(getClass().getResource(game.getImage(game.roll()))));
+        if(game.rollLimit() == false)
+        {
+            game.rollDice();
+            jToggleButton1.setEnabled(true);
+            jToggleButton2.setEnabled(true);
+            jToggleButton3.setEnabled(true);
+            jToggleButton4.setEnabled(true);
+            jToggleButton5.setEnabled(true);
+            jLabel21.setIcon(new
+    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(0)))));
+            jLabel22.setIcon(new
+    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(1)))));
+            jLabel23.setIcon(new
+    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(2)))));
+            jLabel24.setIcon(new
+    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
+            jLabel25.setIcon(new
+    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
+        }
+        else
+        {
+            jLabel26.setText("You have disgraced this establishment. Never show your face in here again.");
+        }
 
         //jLabel21.setIcon(new ImageIcon(new ImageIcon(game.getImage(game.rollDice())).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -813,6 +859,7 @@ javax.swing.ImageIcon(getClass().getResource(game.getImage(game.roll()))));
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
