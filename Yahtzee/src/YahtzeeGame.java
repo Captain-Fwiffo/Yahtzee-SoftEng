@@ -67,9 +67,19 @@ public class YahtzeeGame
         }
     }
     
+    public void resetToggle(){
+        for(int i = 0; i < keeps.length; i++){
+            keeps[i] = false;
+        }
+    }
+    
     public int getDice(int req)
     {
         return handDice[req];
+    }
+    
+    public int[] getHand(){
+        return handDice;
     }
     
     public int getRollCount()
