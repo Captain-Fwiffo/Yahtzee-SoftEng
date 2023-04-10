@@ -9,6 +9,7 @@
  */
 
 import java.util.Random;
+import java.util.LinkedList;
 
 public class YahtzeeGame 
 {
@@ -17,14 +18,27 @@ public class YahtzeeGame
     int[] handDice = {0,0,0,0,0};
     boolean[] keeps = {false, false, false, false, false};
     int rollCount;
+    int playerCount;
+    int currentPlayer;
+    boolean turnOver;
     
-    YahtzeeGame()
+    
+    YahtzeeGame(int p)
     {
-        
+       playerCount = p;
+       Player[] players = new Player[playerCount];
+
+       for(int i = 0; i < playerCount; i++)
+       {
+           players[i] = new Player(i);
+       }
     }
+    
+   
     
     public void roundStart()
     {
+        turnOver = false;
         rollCount = 0;
         for(int i = 0; i < handDice.length; i++)
         {
@@ -99,6 +113,11 @@ public class YahtzeeGame
     public String getImage(int r)
     {
         return "Dice" + r + ".png";
+    }
+    
+    public boolean getTurnOver()
+    {
+        return turnOver;
     }
     
 }

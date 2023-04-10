@@ -13,17 +13,21 @@ import javax.swing.AbstractButton;
  */
 public class GameMenu extends javax.swing.JFrame {
 
-    YahtzeeGame game = new YahtzeeGame();
+    YahtzeeGame game;
     boolean[] button = new boolean[5];
-    Player player = new Player();
+    static int playerCount;
+    Player player = new Player(1);
     int temp;
     boolean turn = true;
 
     /**
      * Creates new form GameMenu
      */
-    public GameMenu() {
+    public GameMenu(int p) {
+        
         initComponents();
+        playerCount = p;
+        game = new YahtzeeGame(playerCount);
         jToggleButton1.setEnabled(false);
         jToggleButton2.setEnabled(false);
         jToggleButton3.setEnabled(false);
@@ -958,7 +962,7 @@ public class GameMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(game.rollLimit() == false)
+        if(game.rollLimit() == false && turn)
         {
             game.rollDice();
             jToggleButton1.setEnabled(true);
@@ -977,9 +981,13 @@ public class GameMenu extends javax.swing.JFrame {
             jLabel25.setIcon(new
     javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
         }
+        else if(!turn)
+        {
+            jLabel26.setText("There's no need to be afraid of ending your turn.");
+        }
         else
         {
-            jLabel26.setText("You have disgraced this establishment. Never show your face in here again.");
+            jLabel26.setText("I'm cutting you off. You've had too many rolls.");
         }
 
         //jLabel21.setIcon(new ImageIcon(new ImageIcon(game.getImage(game.rollDice())).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
@@ -1097,7 +1105,7 @@ public class GameMenu extends javax.swing.JFrame {
             jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(2)))));
             jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
             jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
-            jLabel26.setText("New Turn");
+            jLabel26.setText("New turn, new you.");
             player.updateScores();
             upperBeforeBonusScore.setText(Integer.toString(player.getTopScore()[6]));
             bonusScore.setText(Integer.toString(player.getTopScore()[7]));
@@ -1105,10 +1113,20 @@ public class GameMenu extends javax.swing.JFrame {
             lowerTotalScore.setText(Integer.toString(player.getBotScore()[7]));
             grandTotalScore.setText(Integer.toString(player.getBotScore()[8]));
             turn = true;
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton1.setEnabled(false);
+            jToggleButton2.setEnabled(false);
+            jToggleButton3.setEnabled(false);
+            jToggleButton4.setEnabled(false);
+            jToggleButton5.setEnabled(false);
             
         }
         else{
-            jLabel26.setText("Turns not over");
+            jLabel26.setText("Mom always says you need to finish your turn before starting a new one.");
         }
     }//GEN-LAST:event_endButtonActionPerformed
 
@@ -1142,7 +1160,7 @@ public class GameMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GameMenu().setVisible(true);
+                new GameMenu(playerCount).setVisible(true);
             }
         });
     }
