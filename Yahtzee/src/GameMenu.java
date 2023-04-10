@@ -17,7 +17,6 @@ public class GameMenu extends javax.swing.JFrame {
     boolean[] button = new boolean[5];
     static int playerCount;
     int temp;
-    boolean turn = true;
 
     /**
      * Creates new form GameMenu
@@ -32,7 +31,134 @@ public class GameMenu extends javax.swing.JFrame {
         jToggleButton3.setEnabled(false);
         jToggleButton4.setEnabled(false);
         jToggleButton5.setEnabled(false);
-       
+    }
+    
+    void endOfRound()
+       {
+            game.updateScores();
+            upperBeforeBonusScore.setText(Integer.toString(game.getTopScore()[6]));
+            bonusScore.setText(Integer.toString(game.getTopScore()[7]));
+            upperTotalScore.setText(Integer.toString(game.getTopScore()[8]));
+            lowerTotalScore.setText(Integer.toString(game.getBotScore()[7]));
+            grandTotalScore.setText(Integer.toString(game.getBotScore()[8]));
+            game.roundEnd();
+       }
+    
+    void startOfRound()
+    {
+        if(game.getOnes() != -1)
+        {
+            onesScore.setText(Integer.toString(game.getOnes()));
+        }
+        else
+        {
+            onesScore.setText("");
+        }
+        
+        if(game.getTwos() != -1)
+        {
+            twosScore.setText(Integer.toString(game.getTwos()));
+        }
+        else
+        {
+            twosScore.setText("");
+        }
+        
+        if(game.getThrees() != -1)
+        {
+            threesScore.setText(Integer.toString(game.getThrees()));
+        }
+        else
+        {
+            threesScore.setText("");
+        }
+        
+        if(game.getFours() != -1)
+        {
+            foursScore.setText(Integer.toString(game.getFours()));
+        }
+        else
+        {
+            foursScore.setText("");
+        }
+        
+        if(game.getFives() != -1)
+        {
+            fivesScore.setText(Integer.toString(game.getFives()));
+        }
+        else
+        {
+            fivesScore.setText("");
+        }
+        
+        if(game.getSixes() != -1)
+        {
+            sixesScore.setText(Integer.toString(game.getSixes()));
+        }
+        else
+        {
+            sixesScore.setText("");
+        }
+        
+        if(game.getThreeKind() != -1)
+        {
+            threeKindScore.setText(Integer.toString(game.getThreeKind()));
+        }
+        else
+        {
+            threeKindScore.setText("");
+        }
+        
+        if(game.getFourKind() != -1)
+        {
+            fourKindScore.setText(Integer.toString(game.getFourKind()));
+        }
+        else
+        {
+            fourKindScore.setText("");
+        }
+        
+        if(game.getSmallStraight() != -1)
+        {
+            smallStraightScore.setText(Integer.toString(game.getSmallStraight()));
+        }
+        else
+        {
+            smallStraightScore.setText("");
+        }
+        
+        if(game.getLargeStraight() != -1)
+        {
+            largeStraightScore.setText(Integer.toString(game.getLargeStraight()));
+        }
+        else
+        {
+            largeStraightScore.setText("");
+        }
+        
+        if(game.getYahtzee() != -1)
+        {
+            yahtzeeScore.setText(Integer.toString(game.getYahtzee()));
+        }
+        else
+        {
+            yahtzeeScore.setText("");
+        }
+        
+        if(game.getChance() != -1)
+        {
+            chanceScore.setText(Integer.toString(game.getChance()));
+        }
+        else
+        {
+            chanceScore.setText("");
+        }
+        upperBeforeBonusScore.setText(Integer.toString(game.getTopScore()[6]));
+        bonusScore.setText(Integer.toString(game.getTopScore()[7]));
+        upperTotalScore.setText(Integer.toString(game.getTopScore()[8]));
+        lowerTotalScore.setText(Integer.toString(game.getBotScore()[7]));
+        grandTotalScore.setText(Integer.toString(game.getBotScore()[8]));
+        playerNo.setText(Integer.toString(game.returnCurrentPlayer()));
     }
 
     /**
@@ -48,7 +174,6 @@ public class GameMenu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -98,6 +223,7 @@ public class GameMenu extends javax.swing.JFrame {
         largeStraightButton = new javax.swing.JButton();
         yahtzeeButton = new javax.swing.JButton();
         chanceButton = new javax.swing.JButton();
+        playerNo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
@@ -127,9 +253,6 @@ public class GameMenu extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Player: ");
-
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Ones");
@@ -402,6 +525,8 @@ public class GameMenu extends javax.swing.JFrame {
             }
         });
 
+        playerNo.setText("1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -437,7 +562,7 @@ public class GameMenu extends javax.swing.JFrame {
                         .addComponent(yahtzeeScore, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addComponent(largeStraightButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(largeStraightScore, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -457,8 +582,8 @@ public class GameMenu extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(89, 89, 89)
                         .addComponent(jLabel2)
-                        .addGap(28, 28, 28)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(playerNo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -523,8 +648,8 @@ public class GameMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addComponent(playerNo))
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(onesScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -605,7 +730,7 @@ public class GameMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(lowerTotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(grandTotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -737,7 +862,7 @@ public class GameMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel26.setText("Yo Stephen, this is the message box for the game.");
+        jLabel26.setText("Welcome to Yahtzee, motherfucker.");
 
         endButton.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         endButton.setText("End Turn");
@@ -996,106 +1121,159 @@ public class GameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void onesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onesButtonActionPerformed
-        if(game.checkValid(0, 0) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(0, 0) && !game.getTurnOver()){
             temp = game.ones(game.getHand());
             onesScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_onesButtonActionPerformed
 
     private void twosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twosButtonActionPerformed
-        if(game.checkValid(0, 1) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(0, 1) && !game.getTurnOver()){
             temp = game.twos(game.getHand());
             twosScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_twosButtonActionPerformed
 
     private void threesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threesButtonActionPerformed
-        if(game.checkValid(0, 2) && !game.getTurnOver()){
+       if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+       else if(game.checkValid(0, 2) && !game.getTurnOver()){
             temp = game.threes(game.getHand());
             threesScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_threesButtonActionPerformed
 
     private void foursButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foursButtonActionPerformed
-        if(game.checkValid(0, 3) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(0, 3) && !game.getTurnOver()){
             temp = game.fours(game.getHand());
             foursScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_foursButtonActionPerformed
 
     private void fivesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fivesButtonActionPerformed
-        if(game.checkValid(0, 4) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(0, 4) && !game.getTurnOver()){
             temp = game.fives(game.getHand());
             fivesScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_fivesButtonActionPerformed
 
     private void sixesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixesButtonActionPerformed
-        if(game.checkValid(0, 5) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(0, 5) && !game.getTurnOver()){
             temp = game.sixes(game.getHand());
             sixesScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_sixesButtonActionPerformed
 
     private void threeKindButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeKindButtonActionPerformed
-        if(game.checkValid(1, 0) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(1, 0) && !game.getTurnOver())
+        {
             temp = game.threeKind(game.getHand());
             threeKindScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_threeKindButtonActionPerformed
 
     private void fourKindButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourKindButtonActionPerformed
-        if(game.checkValid(1, 1) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(1, 1) && !game.getTurnOver()){
             temp = game.fourKind(game.getHand());
             fourKindScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_fourKindButtonActionPerformed
 
     private void fullHouseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullHouseButtonActionPerformed
-        if(game.checkValid(1, 2) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(1, 2) && !game.getTurnOver()){
             temp = game.fullHouse(game.getHand());
             fullHouseScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_fullHouseButtonActionPerformed
 
     private void smallStraightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smallStraightButtonActionPerformed
-        if(game.checkValid(1, 3) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(1, 3) && !game.getTurnOver()){
             temp = game.smallStraight(game.getHand());
             smallStraightScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_smallStraightButtonActionPerformed
 
     private void largeStraightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_largeStraightButtonActionPerformed
-        if(game.checkValid(1, 4) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(1, 4) && !game.getTurnOver()){
             temp = game.largeStraight(game.getHand());
             largeStraightScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_largeStraightButtonActionPerformed
 
     private void yahtzeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yahtzeeButtonActionPerformed
-        if(game.checkValid(1, 5) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(1, 5) && !game.getTurnOver()){
             temp = game.yahtzee(game.getHand());
             yahtzeeScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_yahtzeeButtonActionPerformed
 
     private void chanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chanceButtonActionPerformed
-        if(game.checkValid(1, 6) && !game.getTurnOver()){
+        if(game.getRollCount() == 0)
+        {
+            jLabel26.setText("It might be a good idea to roll the dice first.");
+        }
+        else if(game.checkValid(1, 6) && !game.getTurnOver()){
             temp = game.chance(game.getHand());
             chanceScore.setText(Integer.toString(temp));
-            game.roundEnd();
+            endOfRound();
         }
     }//GEN-LAST:event_chanceButtonActionPerformed
 
@@ -1108,13 +1286,10 @@ public class GameMenu extends javax.swing.JFrame {
             jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
             jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
             jLabel26.setText("New turn, new you.");
-            game.updateScores();
-            upperBeforeBonusScore.setText(Integer.toString(game.getTopScore()[6]));
-            bonusScore.setText(Integer.toString(game.getTopScore()[7]));
-            upperTotalScore.setText(Integer.toString(game.getTopScore()[8]));
-            lowerTotalScore.setText(Integer.toString(game.getBotScore()[7]));
-            grandTotalScore.setText(Integer.toString(game.getBotScore()[8]));
-            turn = true;
+            //game.updateScores();
+            
+            startOfRound();
+            
             jToggleButton1.setSelected(false);
             jToggleButton2.setSelected(false);
             jToggleButton3.setSelected(false);
@@ -1182,7 +1357,6 @@ public class GameMenu extends javax.swing.JFrame {
     private javax.swing.JTextField fullHouseScore;
     private javax.swing.JTextField grandTotalScore;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1227,6 +1401,7 @@ public class GameMenu extends javax.swing.JFrame {
     private javax.swing.JTextField lowerTotalScore;
     private javax.swing.JButton onesButton;
     private javax.swing.JTextField onesScore;
+    private javax.swing.JLabel playerNo;
     private javax.swing.JButton sixesButton;
     private javax.swing.JTextField sixesScore;
     private javax.swing.JButton smallStraightButton;

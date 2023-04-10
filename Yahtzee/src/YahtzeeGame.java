@@ -40,7 +40,7 @@ public class YahtzeeGame
     //Beginning of Player Functions
     public int returnCurrentPlayer()
     {
-        return currentPlayer;
+        return currentPlayer + 1;
     }
     
     public int[] getTopScore(){
@@ -53,6 +53,66 @@ public class YahtzeeGame
     
     public boolean checkValid(int topBot, int index){
         return players[currentPlayer].checkValid(topBot, index);
+    }
+    
+    public int getOnes()
+    {
+        return players[currentPlayer].topScore[0];
+    }
+    public int getTwos()
+    {
+        return players[currentPlayer].topScore[1];
+    }
+    public int getThrees()
+    {
+        return players[currentPlayer].topScore[2];
+    }
+    public int getFours()
+    {
+        return players[currentPlayer].topScore[3];
+    }
+    public int getFives()
+    {
+        return players[currentPlayer].topScore[4];
+    }
+    public int getSixes()
+    {
+        return players[currentPlayer].topScore[5];
+    }
+    
+    public int getThreeKind()
+    {
+        return players[currentPlayer].botScore[0];
+    }
+    
+    public int getFourKind()
+    {
+        return players[currentPlayer].botScore[1];
+    }
+    
+    public int getFullHouse()
+    {
+        return players[currentPlayer].botScore[2];
+    }
+    
+    public int getSmallStraight()
+    {
+        return players[currentPlayer].botScore[3];
+    }
+    
+    public int getLargeStraight()
+    {
+        return players[currentPlayer].botScore[4];
+    }
+    
+    public int getYahtzee()
+    {
+        return players[currentPlayer].botScore[5];
+    }
+    
+    public int getChance()
+    {
+        return players[currentPlayer].botScore[6];
     }
     
     public int ones(int[] hand){

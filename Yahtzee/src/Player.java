@@ -23,6 +23,7 @@ public class Player {
     8 = Upper Total
     */
     int[] topScore = {-1, -1, -1, -1, -1, -1, 0, 0, 0}; 
+    
     /*botScore index key:
     0 = 3 of a kind
     1 = 4 of a kind
@@ -63,6 +64,67 @@ public class Player {
             else
                 return false;
         }
+    }
+    
+    //Beginning of getters for fields
+    public int getOnes()
+    {
+        return topScore[0];
+    }
+    public int getTwos()
+    {
+        return topScore[1];
+    }
+    public int getThrees()
+    {
+        return topScore[2];
+    }
+    public int getFours()
+    {
+        return topScore[3];
+    }
+    public int getFives()
+    {
+        return topScore[4];
+    }
+    public int getSixes()
+    {
+        return topScore[5];
+    }
+    
+    public int getThreeKind()
+    {
+        return botScore[0];
+    }
+    
+    public int getFourKind()
+    {
+        return botScore[1];
+    }
+    
+    public int getFullHouse()
+    {
+        return botScore[2];
+    }
+    
+    public int getSmallStraight()
+    {
+        return botScore[3];
+    }
+    
+    public int getLargeStraight()
+    {
+        return botScore[4];
+    }
+    
+    public int getYahtzee()
+    {
+        return botScore[5];
+    }
+    
+    public int getChance()
+    {
+        return botScore[6];
     }
     
     public int ones(int[] hand){
