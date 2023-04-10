@@ -16,7 +16,9 @@ public class GameMenu extends javax.swing.JFrame {
     YahtzeeGame game;
     boolean[] button = new boolean[5];
     static int playerCount;
-    int temp;
+    int temp, winner;
+    private int turnCount = 1;
+    private boolean gameOver = false, draw = false;
 
     /**
      * Creates new form GameMenu
@@ -170,6 +172,27 @@ public class GameMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        scoreboard = new javax.swing.JDialog();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        jLabel27 = new javax.swing.JLabel();
+        player1Score = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        player2Score = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        player3Score = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        player4Score = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        player5Score = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        player6Score = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        player7Score = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        player8Score = new javax.swing.JTextField();
+        endScreen = new javax.swing.JDialog();
+        jLayeredPane3 = new javax.swing.JLayeredPane();
+        endScreenText = new javax.swing.JTextField();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -224,6 +247,7 @@ public class GameMenu extends javax.swing.JFrame {
         yahtzeeButton = new javax.swing.JButton();
         chanceButton = new javax.swing.JButton();
         playerNo = new javax.swing.JLabel();
+        scoreboardButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
@@ -243,6 +267,187 @@ public class GameMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
         endButton = new javax.swing.JButton();
+
+        jLabel27.setText("Player 1");
+
+        player1Score.setEditable(false);
+
+        jLabel28.setText("Player 2");
+
+        player2Score.setEditable(false);
+        player2Score.setText("X");
+        player2Score.setToolTipText("");
+
+        jLabel29.setText("Player 3");
+
+        player3Score.setEditable(false);
+        player3Score.setText("X");
+
+        jLabel30.setText("Player 4");
+
+        player4Score.setEditable(false);
+        player4Score.setText("X");
+
+        jLabel31.setText("Player 5");
+
+        player5Score.setEditable(false);
+        player5Score.setText("X");
+
+        jLabel32.setText("Player 6");
+
+        player6Score.setEditable(false);
+        player6Score.setText("X");
+
+        jLabel33.setText("Player 7");
+
+        player7Score.setEditable(false);
+        player7Score.setText("X");
+
+        jLabel34.setText("Player 8");
+
+        player8Score.setEditable(false);
+        player8Score.setText("X");
+
+        jLayeredPane2.setLayer(jLabel27, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player1Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel28, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player2Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel29, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player3Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel30, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player4Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel31, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player5Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel32, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player6Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel33, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player7Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel34, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(player8Score, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addComponent(jLabel34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(player8Score, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(player7Score, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(player6Score, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addComponent(jLabel31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(player5Score, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(player1Score, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane2Layout.createSequentialGroup()
+                                    .addComponent(jLabel28)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(player2Score, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane2Layout.createSequentialGroup()
+                                    .addComponent(jLabel29)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(player3Score, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane2Layout.createSequentialGroup()
+                                    .addComponent(jLabel30)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(player4Score, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(29, 29, 29))))
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(player1Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(player2Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(player3Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(player4Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(player5Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(player6Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(player7Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(player8Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout scoreboardLayout = new javax.swing.GroupLayout(scoreboard.getContentPane());
+        scoreboard.getContentPane().setLayout(scoreboardLayout);
+        scoreboardLayout.setHorizontalGroup(
+            scoreboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        scoreboardLayout.setVerticalGroup(
+            scoreboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        endScreenText.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
+        endScreenText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        endScreenText.setText("Player 1 Wins!");
+
+        jLayeredPane3.setLayer(endScreenText, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
+        jLayeredPane3.setLayout(jLayeredPane3Layout);
+        jLayeredPane3Layout.setHorizontalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(endScreenText, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jLayeredPane3Layout.setVerticalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(endScreenText, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout endScreenLayout = new javax.swing.GroupLayout(endScreen.getContentPane());
+        endScreen.getContentPane().setLayout(endScreenLayout);
+        endScreenLayout.setHorizontalGroup(
+            endScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        endScreenLayout.setVerticalGroup(
+            endScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane3)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -527,6 +732,13 @@ public class GameMenu extends javax.swing.JFrame {
 
         playerNo.setText("1");
 
+        scoreboardButton.setText("Show Scoreboard");
+        scoreboardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scoreboardButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -534,12 +746,6 @@ public class GameMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(onesButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(onesScore, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -578,12 +784,6 @@ public class GameMenu extends javax.swing.JFrame {
                         .addComponent(fullHouseButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fullHouseScore, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(89, 89, 89)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(playerNo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -638,7 +838,22 @@ public class GameMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(fourKindButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fourKindScore, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(fourKindScore, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(playerNo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(scoreboardButton)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(onesButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(onesScore, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -649,7 +864,9 @@ public class GameMenu extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(playerNo))
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scoreboardButton)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(onesScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -862,7 +1079,7 @@ public class GameMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel26.setText("Welcome to Yahtzee, motherfucker.");
+        jLabel26.setText("Welcome to Yahtzee, wonderful person.");
 
         endButton.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         endButton.setText("End Turn");
@@ -1085,36 +1302,37 @@ public class GameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if(game.rollLimit() == false && !game.getTurnOver())
-        {
-            game.rollDice();
-            if(game.getRollCount() == 1)
+        if(!gameOver){
+            if(game.rollLimit() == false && !game.getTurnOver())
             {
-                jToggleButton1.setEnabled(true);
-                jToggleButton2.setEnabled(true);
-                jToggleButton3.setEnabled(true);
-                jToggleButton4.setEnabled(true);
-                jToggleButton5.setEnabled(true);
+                game.rollDice();
+                if(game.getRollCount() == 1)
+                {
+                    jToggleButton1.setEnabled(true);
+                    jToggleButton2.setEnabled(true);
+                    jToggleButton3.setEnabled(true);
+                    jToggleButton4.setEnabled(true);
+                    jToggleButton5.setEnabled(true);
+                }
+                jLabel21.setIcon(new
+        javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(0)))));
+                jLabel22.setIcon(new
+        javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(1)))));
+                jLabel23.setIcon(new
+        javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(2)))));
+                jLabel24.setIcon(new
+        javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
+                jLabel25.setIcon(new
+        javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
             }
-            jLabel21.setIcon(new
-    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(0)))));
-            jLabel22.setIcon(new
-    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(1)))));
-            jLabel23.setIcon(new
-    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(2)))));
-            jLabel24.setIcon(new
-    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
-            jLabel25.setIcon(new
-    javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
-        }
-        else if(game.getTurnOver())
-        {
-            jLabel26.setText("There's no need to be afraid of ending your turn.");
-        }
-        else
-        {
-            jLabel26.setText("I'm cutting you off. You've had too many rolls.");
+            else if(game.getTurnOver())
+            {
+                jLabel26.setText("There's no need to be afraid of ending your turn.");
+            }
+            else
+            {
+                jLabel26.setText("I'm cutting you off. You've had too many rolls.");
+            }
         }
 
         //jLabel21.setIcon(new ImageIcon(new ImageIcon(game.getImage(game.rollDice())).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
@@ -1279,33 +1497,82 @@ public class GameMenu extends javax.swing.JFrame {
 
     private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
         if(game.getTurnOver()){
-            game.roundStart();
-            jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(0)))));
-            jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(1)))));
-            jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(2)))));
-            jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
-            jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
-            jLabel26.setText("New turn, new you.");
-            //game.updateScores();
-            
-            startOfRound();
-            
-            jToggleButton1.setSelected(false);
-            jToggleButton2.setSelected(false);
-            jToggleButton3.setSelected(false);
-            jToggleButton4.setSelected(false);
-            jToggleButton5.setSelected(false);
-            jToggleButton1.setEnabled(false);
-            jToggleButton2.setEnabled(false);
-            jToggleButton3.setEnabled(false);
-            jToggleButton4.setEnabled(false);
-            jToggleButton5.setEnabled(false);
+            if(game.returnCurrentPlayer() == playerCount)
+                turnCount++;
+            if(turnCount > 13){
+                gameOver = true;
+                jLabel26.setText("Game Over");
+                for(int i = 0; i < playerCount; i++){
+                    if(game.getPlayerScore(i) > temp){
+                        temp = game.getPlayerScore(i);
+                        winner = i + 1;
+                        draw = false;
+                    }
+                    else if(game.getPlayerScore(i) == temp){
+                        draw = true;
+                    }
+                        
+                }
+                if(!draw)
+                    endScreenText.setText("Player " + Integer.toString(winner) + " Wins!");
+                else
+                    endScreenText.setText("Draw!");
+                endScreen.setSize(350, 200);
+                endScreen.setVisible(true);
+                draw = false;
+                temp = 0;
+            }
+            else{
+                game.roundStart();
+                jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(0)))));
+                jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(1)))));
+                jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(2)))));
+                jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
+                jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
+                jLabel26.setText("New turn, new you.");
+                //game.updateScores();
+
+                startOfRound();
+
+                jToggleButton1.setSelected(false);
+                jToggleButton2.setSelected(false);
+                jToggleButton3.setSelected(false);
+                jToggleButton4.setSelected(false);
+                jToggleButton5.setSelected(false);
+                jToggleButton1.setEnabled(false);
+                jToggleButton2.setEnabled(false);
+                jToggleButton3.setEnabled(false);
+                jToggleButton4.setEnabled(false);
+                jToggleButton5.setEnabled(false);
+            }
             
         }
         else{
             jLabel26.setText("Mom always says you need to finish your turn before starting a new one.");
         }
     }//GEN-LAST:event_endButtonActionPerformed
+
+    private void scoreboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreboardButtonActionPerformed
+        scoreboard.setSize(175, 350);
+        scoreboard.setVisible(true);
+        player1Score.setText(Integer.toString(game.getPlayerScore(0)));
+        if(playerCount > 1)
+            player2Score.setText(Integer.toString(game.getPlayerScore(1)));
+        if(playerCount > 2)
+            player3Score.setText(Integer.toString(game.getPlayerScore(2)));
+        if(playerCount > 3)
+            player4Score.setText(Integer.toString(game.getPlayerScore(3)));
+        if(playerCount > 4)
+            player5Score.setText(Integer.toString(game.getPlayerScore(4)));
+        if(playerCount > 5)
+            player6Score.setText(Integer.toString(game.getPlayerScore(5)));
+        if(playerCount > 6)
+            player7Score.setText(Integer.toString(game.getPlayerScore(6)));
+        if(playerCount > 7)
+            player8Score.setText(Integer.toString(game.getPlayerScore(7)));
+
+        
+    }//GEN-LAST:event_scoreboardButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1347,6 +1614,8 @@ public class GameMenu extends javax.swing.JFrame {
     private javax.swing.JButton chanceButton;
     private javax.swing.JTextField chanceScore;
     private javax.swing.JButton endButton;
+    private javax.swing.JDialog endScreen;
+    private javax.swing.JTextField endScreenText;
     private javax.swing.JButton fivesButton;
     private javax.swing.JTextField fivesScore;
     private javax.swing.JButton fourKindButton;
@@ -1376,7 +1645,15 @@ public class GameMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1384,6 +1661,8 @@ public class GameMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1401,7 +1680,17 @@ public class GameMenu extends javax.swing.JFrame {
     private javax.swing.JTextField lowerTotalScore;
     private javax.swing.JButton onesButton;
     private javax.swing.JTextField onesScore;
+    private javax.swing.JTextField player1Score;
+    private javax.swing.JTextField player2Score;
+    private javax.swing.JTextField player3Score;
+    private javax.swing.JTextField player4Score;
+    private javax.swing.JTextField player5Score;
+    private javax.swing.JTextField player6Score;
+    private javax.swing.JTextField player7Score;
+    private javax.swing.JTextField player8Score;
     private javax.swing.JLabel playerNo;
+    private javax.swing.JDialog scoreboard;
+    private javax.swing.JButton scoreboardButton;
     private javax.swing.JButton sixesButton;
     private javax.swing.JTextField sixesScore;
     private javax.swing.JButton smallStraightButton;

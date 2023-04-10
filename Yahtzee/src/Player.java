@@ -235,7 +235,6 @@ public class Player {
     }
     
     public int fullHouse(int[] hand){
-        tempScore = 0;
         valid = false;
         int three = 0;
         for(int i = 1; i <= 6; i++){
@@ -259,10 +258,8 @@ public class Player {
             }
         }
         if(valid){
-            for(int i = 0; i < hand.length; i++)
-                tempScore = tempScore + hand[i];
-            botScore[2] = tempScore;
-            return tempScore;
+            botScore[2] = 25;
+            return 25;
         }
         else{ 
             botScore[2] = 0;
@@ -271,7 +268,6 @@ public class Player {
     }
     
     public int smallStraight(int[] hand){
-        tempScore = 0;
         count = 0;
         valid = false;
         Arrays.sort(hand);
@@ -286,10 +282,8 @@ public class Player {
         if(count >= 3)
             valid = true;
         if(valid){
-            for(int i = 0; i < hand.length; i++)
-                tempScore = tempScore + hand[i];
-            botScore[3] = tempScore;
-            return tempScore;
+            botScore[3] = 30;
+            return 30;
         }
         else{ 
             botScore[3] = 0;
@@ -298,7 +292,6 @@ public class Player {
     }
     
     public int largeStraight(int[] hand){
-        tempScore = 0;
         count = 0;
         valid = false;
         Arrays.sort(hand);
@@ -311,10 +304,8 @@ public class Player {
         if(count == 4)
             valid = true;
         if(valid){
-            for(int i = 0; i < hand.length; i++)
-                tempScore = tempScore + hand[i];
-            botScore[4] = tempScore;
-            return tempScore;
+            botScore[4] = 40;
+            return 40;
         }
         else{ 
             botScore[4] = 0;

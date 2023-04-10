@@ -51,6 +51,10 @@ public class YahtzeeGame
         return players[currentPlayer].getBotScore();
     }
     
+    public int getPlayerScore(int player){
+        return players[player].botScore[8];
+    }
+    
     public boolean checkValid(int topBot, int index){
         return players[currentPlayer].checkValid(topBot, index);
     }
