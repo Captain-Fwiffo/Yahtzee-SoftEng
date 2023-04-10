@@ -16,7 +16,6 @@ public class GameMenu extends javax.swing.JFrame {
     YahtzeeGame game;
     boolean[] button = new boolean[5];
     static int playerCount;
-    Player player = new Player(1);
     int temp;
     boolean turn = true;
 
@@ -962,14 +961,17 @@ public class GameMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(game.rollLimit() == false && turn)
+        if(game.rollLimit() == false && !game.getTurnOver())
         {
             game.rollDice();
-            jToggleButton1.setEnabled(true);
-            jToggleButton2.setEnabled(true);
-            jToggleButton3.setEnabled(true);
-            jToggleButton4.setEnabled(true);
-            jToggleButton5.setEnabled(true);
+            if(game.getRollCount() == 1)
+            {
+                jToggleButton1.setEnabled(true);
+                jToggleButton2.setEnabled(true);
+                jToggleButton3.setEnabled(true);
+                jToggleButton4.setEnabled(true);
+                jToggleButton5.setEnabled(true);
+            }
             jLabel21.setIcon(new
     javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(0)))));
             jLabel22.setIcon(new
@@ -981,7 +983,7 @@ public class GameMenu extends javax.swing.JFrame {
             jLabel25.setIcon(new
     javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
         }
-        else if(!turn)
+        else if(game.getTurnOver())
         {
             jLabel26.setText("There's no need to be afraid of ending your turn.");
         }
@@ -994,111 +996,111 @@ public class GameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void onesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onesButtonActionPerformed
-        if(player.checkValid(0, 0) && turn){
-            temp = player.ones(game.getHand());
+        if(game.checkValid(0, 0) && !game.getTurnOver()){
+            temp = game.ones(game.getHand());
             onesScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_onesButtonActionPerformed
 
     private void twosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twosButtonActionPerformed
-        if(player.checkValid(0, 1) && turn){
-            temp = player.twos(game.getHand());
+        if(game.checkValid(0, 1) && !game.getTurnOver()){
+            temp = game.twos(game.getHand());
             twosScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_twosButtonActionPerformed
 
     private void threesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threesButtonActionPerformed
-        if(player.checkValid(0, 2) && turn){
-            temp = player.threes(game.getHand());
+        if(game.checkValid(0, 2) && !game.getTurnOver()){
+            temp = game.threes(game.getHand());
             threesScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_threesButtonActionPerformed
 
     private void foursButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foursButtonActionPerformed
-        if(player.checkValid(0, 3) && turn){
-            temp = player.fours(game.getHand());
+        if(game.checkValid(0, 3) && !game.getTurnOver()){
+            temp = game.fours(game.getHand());
             foursScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_foursButtonActionPerformed
 
     private void fivesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fivesButtonActionPerformed
-        if(player.checkValid(0, 4) && turn){
-            temp = player.fives(game.getHand());
+        if(game.checkValid(0, 4) && !game.getTurnOver()){
+            temp = game.fives(game.getHand());
             fivesScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_fivesButtonActionPerformed
 
     private void sixesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixesButtonActionPerformed
-        if(player.checkValid(0, 5) && turn){
-            temp = player.sixes(game.getHand());
+        if(game.checkValid(0, 5) && !game.getTurnOver()){
+            temp = game.sixes(game.getHand());
             sixesScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_sixesButtonActionPerformed
 
     private void threeKindButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeKindButtonActionPerformed
-        if(player.checkValid(1, 0) && turn){
-            temp = player.threeKind(game.getHand());
+        if(game.checkValid(1, 0) && !game.getTurnOver()){
+            temp = game.threeKind(game.getHand());
             threeKindScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_threeKindButtonActionPerformed
 
     private void fourKindButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourKindButtonActionPerformed
-        if(player.checkValid(1, 1) && turn){
-            temp = player.fourKind(game.getHand());
+        if(game.checkValid(1, 1) && !game.getTurnOver()){
+            temp = game.fourKind(game.getHand());
             fourKindScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_fourKindButtonActionPerformed
 
     private void fullHouseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullHouseButtonActionPerformed
-        if(player.checkValid(1, 2) && turn){
-            temp = player.fullHouse(game.getHand());
+        if(game.checkValid(1, 2) && !game.getTurnOver()){
+            temp = game.fullHouse(game.getHand());
             fullHouseScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_fullHouseButtonActionPerformed
 
     private void smallStraightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smallStraightButtonActionPerformed
-        if(player.checkValid(1, 3) && turn){
-            temp = player.smallStraight(game.getHand());
+        if(game.checkValid(1, 3) && !game.getTurnOver()){
+            temp = game.smallStraight(game.getHand());
             smallStraightScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_smallStraightButtonActionPerformed
 
     private void largeStraightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_largeStraightButtonActionPerformed
-        if(player.checkValid(1, 4) && turn){
-            temp = player.largeStraight(game.getHand());
+        if(game.checkValid(1, 4) && !game.getTurnOver()){
+            temp = game.largeStraight(game.getHand());
             largeStraightScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_largeStraightButtonActionPerformed
 
     private void yahtzeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yahtzeeButtonActionPerformed
-        if(player.checkValid(1, 5) && turn){
-            temp = player.yahtzee(game.getHand());
+        if(game.checkValid(1, 5) && !game.getTurnOver()){
+            temp = game.yahtzee(game.getHand());
             yahtzeeScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_yahtzeeButtonActionPerformed
 
     private void chanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chanceButtonActionPerformed
-        if(player.checkValid(1, 6) && turn){
-            temp = player.chance(game.getHand());
+        if(game.checkValid(1, 6) && !game.getTurnOver()){
+            temp = game.chance(game.getHand());
             chanceScore.setText(Integer.toString(temp));
-            turn = false;
+            game.roundEnd();
         }
     }//GEN-LAST:event_chanceButtonActionPerformed
 
     private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
-        if(!turn){
+        if(game.getTurnOver()){
             game.roundStart();
             jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(0)))));
             jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(1)))));
@@ -1106,12 +1108,12 @@ public class GameMenu extends javax.swing.JFrame {
             jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(3)))));
             jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource(game.getImage(game.getDice(4)))));
             jLabel26.setText("New turn, new you.");
-            player.updateScores();
-            upperBeforeBonusScore.setText(Integer.toString(player.getTopScore()[6]));
-            bonusScore.setText(Integer.toString(player.getTopScore()[7]));
-            upperTotalScore.setText(Integer.toString(player.getTopScore()[8]));
-            lowerTotalScore.setText(Integer.toString(player.getBotScore()[7]));
-            grandTotalScore.setText(Integer.toString(player.getBotScore()[8]));
+            game.updateScores();
+            upperBeforeBonusScore.setText(Integer.toString(game.getTopScore()[6]));
+            bonusScore.setText(Integer.toString(game.getTopScore()[7]));
+            upperTotalScore.setText(Integer.toString(game.getTopScore()[8]));
+            lowerTotalScore.setText(Integer.toString(game.getBotScore()[7]));
+            grandTotalScore.setText(Integer.toString(game.getBotScore()[8]));
             turn = true;
             jToggleButton1.setSelected(false);
             jToggleButton2.setSelected(false);

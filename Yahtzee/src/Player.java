@@ -36,16 +36,9 @@ public class Player {
     */
     int[] botScore = {-1, -1, -1, -1, -1, -1, -1, 0, 0}; 
     int tempScore, count;
-    int playerNumber;
     boolean valid;
     
-    Player(int c){
-        c = playerNumber;
-    }
-    
-    public int returnPlayer()
-    {
-        return playerNumber;
+    Player(){
     }
     
     public int[] getTopScore(){
