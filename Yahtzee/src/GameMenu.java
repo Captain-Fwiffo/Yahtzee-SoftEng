@@ -33,6 +33,7 @@ public class GameMenu extends javax.swing.JFrame {
         jToggleButton3.setEnabled(false);
         jToggleButton4.setEnabled(false);
         jToggleButton5.setEnabled(false);
+        setResizable(false);
     }
     
     void endOfRound()

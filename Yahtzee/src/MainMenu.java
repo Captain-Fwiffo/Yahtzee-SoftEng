@@ -18,6 +18,7 @@ public class MainMenu extends javax.swing.JFrame {
     private int pageNumber = 1;
     public MainMenu() {
         initComponents();
+        setResizable(false);
     }
 
     /**
