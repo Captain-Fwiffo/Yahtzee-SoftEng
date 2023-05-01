@@ -22,6 +22,8 @@ public class YahtzeeGame
     int currentPlayer;
     Player[] players;
     boolean turnOver;
+    int turnCount;
+    boolean endOfGame;
     
     
     YahtzeeGame(int p)
@@ -34,6 +36,7 @@ public class YahtzeeGame
            players[i] = new Player();
        }
        currentPlayer = 0;
+       turnCount = 1;
     }
     
     
@@ -279,13 +282,20 @@ public class YahtzeeGame
     public void roundEnd()
     {
         turnOver = true;
+
+        
         if(currentPlayer == (playerCount - 1))
         {
             currentPlayer = 0;
+            turnCount++;
         }
         else
         {
             currentPlayer++;
+        }
+        if(turnCount > 13)
+        {
+            endOfGame = true;
         }
     }
     
