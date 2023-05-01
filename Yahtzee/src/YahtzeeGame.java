@@ -23,7 +23,8 @@ public class YahtzeeGame
     Player[] players;
     boolean turnOver;
     int turnCount;
-    boolean endOfGame;
+    boolean endOfGame = false;
+    int winner;
     
     
     YahtzeeGame(int p)
@@ -297,6 +298,28 @@ public class YahtzeeGame
         {
             endOfGame = true;
         }
+    }
+    
+    public boolean gameOver()
+    {
+        return endOfGame;
+    }
+    
+    public int winnar()
+    {
+        int temp = 0;
+        for(int i = 0; i < playerCount; i++){
+            if(getPlayerScore(i) > temp){
+                temp = getPlayerScore(i);
+                winner = i + 1;
+                        
+                }
+            else if(getPlayerScore(i) == temp){
+                return 69;
+                }
+          
+         }
+         return winner;
     }
     
     public boolean getTurnOver()

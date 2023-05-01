@@ -120,6 +120,15 @@ public class GameMenu extends javax.swing.JFrame {
             fourKindScore.setText("");
         }
         
+        if(game.getFullHouse() != -1)
+        {
+            fullHouseScore.setText(Integer.toString(game.getFullHouse()));
+        }
+        else
+        {
+            fullHouseScore.setText("");
+        }
+        
         if(game.getSmallStraight() != -1)
         {
             smallStraightScore.setText(Integer.toString(game.getSmallStraight()));
@@ -1497,30 +1506,14 @@ public class GameMenu extends javax.swing.JFrame {
 
     private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
         if(game.getTurnOver()){
-            if(game.returnCurrentPlayer() == playerCount)
-                turnCount++;
-            if(turnCount > 13){
-                gameOver = true;
+            if(game.gameOver()){
                 jLabel26.setText("Game Over");
-                for(int i = 0; i < playerCount; i++){
-                    if(game.getPlayerScore(i) > temp){
-                        temp = game.getPlayerScore(i);
-                        winner = i + 1;
-                        draw = false;
-                    }
-                    else if(game.getPlayerScore(i) == temp){
-                        draw = true;
-                    }
-                        
-                }
-                if(!draw)
-                    endScreenText.setText("Player " + Integer.toString(winner) + " Wins!");
+                if(game.winnar() != 69)
+                    endScreenText.setText("Player " + Integer.toString(game.winnar()) + " Wins!");
                 else
                     endScreenText.setText("Draw!");
                 endScreen.setSize(350, 200);
                 endScreen.setVisible(true);
-                draw = false;
-                temp = 0;
             }
             else{
                 game.roundStart();
@@ -1545,11 +1538,12 @@ public class GameMenu extends javax.swing.JFrame {
                 jToggleButton4.setEnabled(false);
                 jToggleButton5.setEnabled(false);
             }
-            
         }
-        else{
+        else
+        {
             jLabel26.setText("Mom always says you need to finish your turn before starting a new one.");
-        }
+        } 
+        
     }//GEN-LAST:event_endButtonActionPerformed
 
     private void scoreboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreboardButtonActionPerformed
